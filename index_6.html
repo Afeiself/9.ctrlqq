@@ -9,7 +9,6 @@
     <link rel="stylesheet" type="text/css" href="tkjidicms/cms/css/index_6.css">
 </head>
 <body>
-<div id="page1"></div>
 <div style="width:100%;background:#fff;">
     <!--内容区域-->
     <div class="container">
@@ -18,13 +17,13 @@
             <!-- 检索框标题 -->
             <ul class="fenlei">
                 <li>
-                    <span class="active">
+                    <span class="active" rel="0">
                         <img src="tkjidicms/cms/images2/001.gif" alt="">
                         查大额券
                     </span>
                 </li>
                 <li>
-                    <span class="chaquanwang">
+                    <span class="chaquanwang" rel="1">
                         查全网券
                     </span>
                 </li>
@@ -304,11 +303,26 @@
     <!--内容区域结束-->
     </div>
 </div>
-<div id="page2"></div>
 </body>
-<script>
-        $("#page1").load("index_header.html");
-        $("#page2").load("index_footer.html");
-
-</script>
 </html>
+<script>
+  /*全网大额切换*/
+$(".fenlei li span").click(function () {
+    $(".fenlei li span").removeClass("active")
+    $(this).addClass("active")
+    var rel = $(this).attr("rel");
+    $("#type").val(rel);
+
+})  
+$(".so").click(function(){
+    var value= $("#search").val();
+    var type = $("#type").val();
+   
+   if(value != ''){  
+        var url = "http://9.ctrlqq.com/index.php?r=searchlist&kwd="+value+"&type="+type;
+        $(".so").attr("href", url);
+    }else{
+        alert('请输入商品关键字')
+    }
+})
+</script>

@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">  
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <script src="tkjidicms/cms/js/jquery-1.9.1.js"></script>
+     <title>查全网券-9要购</title>
+	 <link rel="stylesheet" type="text/css" href="tkjidicms/cms/css/index.css">
+</head>
+<body>
+<link rel="stylesheet" href="tkjidicms/cms/css/super-search.css">
+<div style="width:100%;background:#fff;">
+<!--内容区域-->
+    <div class="container">
+        <div class="super-search">
+            <ul class="qiehuan">
+                <li>
+                    <span class="chadae super-active" rel="0">
+                        <img src="tkjidicms/cms/images2/001.gif" alt="">
+                        查大额券
+                    </span>
+                </li>
+                <li>
+                    <span class="chaquanwang" rel="1">
+                        查全网券
+                    </span>
+                </li>
+                <div class="clear"></div>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+/*全网大额切换*/
+$(".qiehuan li span").click(function () {
+    $(".qiehuan li span").removeClass("super-active")
+    $(this).addClass("super-active")
+    var rel = $(this).attr("rel");
+    $("#type").val(rel);
+
+})
+</script>

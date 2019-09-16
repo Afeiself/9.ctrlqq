@@ -7,15 +7,28 @@
     <title>查全网券</title>
     <link rel="stylesheet" type="text/css" href="tkjidicms/cms/css/common.css">
     <link rel="stylesheet" type="text/css" href="tkjidicms/cms/css/index_6.css">
+    <style>
+        .super-search{width: 834px;margin: 0 auto 52px auto}
+.super-search .qiehuan{margin: 0 0 0 20px;padding-top: 58px}
+.super-search .qiehuan li span{font-size: 16px;color: #fd385d;font-weight: bold;width: 110px;height: 35px;display: block;text-align: center;line-height: 35px;float: left;position: relative;
+    cursor: pointer;}
+.super-search .qiehuan li span img{position: absolute;right: 10px;top: -10px}
+.super-active{
+    color: #fff!important;
+    background: linear-gradient(to right, #e9657d , #fd385d); /* 标准的语法 */
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+    </style>
 </head>
 <body>
 <div style="width:100%;background:#fff;">
     <!--内容区域-->
     <div class="container">
         <!-- 检索框 -->
-        <div class="search">
+        <!-- <div class="search"> -->
             <!-- 检索框标题 -->
-            <ul class="fenlei">
+            <!-- <ul class="fenlei">
                 <li>
                     <span class="active" rel="0">
                         <img src="tkjidicms/cms/images2/001.gif" alt="">
@@ -34,7 +47,24 @@
                 <a href="javascript:;"><button type="button">点击搜索</button></a>
             </div>
             <div class="clear"></div>
+        </div> -->
+        <div class="super-search">
+            <ul class="qiehuan">
+                <li>
+                    <span class="chadae super-active" rel="0">
+                        <img src="tkjidicms/cms/images2/001.gif" alt="">
+                        查大额券
+                    </span>
+                </li>
+                <li>
+                    <span class="chaquanwang" rel="1">
+                        查全网券
+                    </span>
+                </li>
+                <div class="clear"></div>
+            </ul>
         </div>
+
         <!-- 检索下的图片跳转框 -->
         <div class="jump">
             <ul>
@@ -307,22 +337,18 @@
 </html>
 <script>
   /*全网大额切换*/
-$(".fenlei li span").click(function () {
-    $(".fenlei li span").removeClass("active")
-    $(this).addClass("active")
+// $(".fenlei li span").click(function () {
+//     $(".fenlei li span").removeClass("active")
+//     $(this).addClass("active")
+//     var rel = $(this).attr("rel");
+//     $("#type").val(rel);
+
+// })  
+$(".qiehuan li span").click(function () {
+    $(".qiehuan li span").removeClass("super-active")
+    $(this).addClass("super-active")
     var rel = $(this).attr("rel");
     $("#type").val(rel);
 
-})  
-$(".so").click(function(){
-    var value= $("#search").val();
-    var type = $("#type").val();
-   
-   if(value != ''){  
-        var url = "http://9.ctrlqq.com/index.php?r=searchlist&kwd="+value+"&type="+type;
-        $(".so").attr("href", url);
-    }else{
-        alert('请输入商品关键字')
-    }
 })
 </script>
